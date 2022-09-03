@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Open+Sans:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Comfortaa", cursive;
+  margin: 1.25rem 0;
+}
+
+p,
+span,
+a,
+button,
+input,
+textarea,
+label,
+li,
+table,
+td {
+  font-family: "Open Sans", sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.mobile-nav {
+  width: 100%;
+  text-align: center;
+}
+.mobile-nav > div {
+  padding: 1.5rem;
+  text-align: right;
+}
+
+#hamburger {
+  width: 40px;
+  border: 2px solid #333;
+  margin-top: 0.15rem;
+  position: relative;
+  left: calc(85% + 5px);
+  border-radius: 4px;
+}
+
+#hamburger::before {
+  content: "";
+  display: block;
+  border: 2px solid purple;
+  position: absolute;
+  width: 36px;
+  right: -2px;
+  top: 8px;
+  border-radius: 4px;
+}
+
+#hamburger::after {
+  content: "";
+  display: block;
+  border: 2px solid green;
+  position: absolute;
+  width: 36px;
+  right: -2px;
+  top: -12px;
+  border-radius: 4px;
+}
+
+#hamburger + ul a {
+  display: block;
+  background: #91BDD9;
+  color: #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  transition: all 0.25s ease-in;
+}
+#hamburger + ul a:first-of-type {
+  border-top: none;
+}
+#hamburger + ul a:hover, #hamburger + ul a:active {
+  background: #6ba6cc;
+}
+
+.show-nav {
+  display: block;
+}
+
+.hide-nav {
+  display: none;
+}
+
+#menu-toggle {
+  display: flex;
+  justify-content: space-between;
+  width: min(100%, 700px);
+}
+#menu-toggle li {
+  border: 1px solid #f1f1f1;
+  cursor: pointer;
+  padding: 1rem;
+  transition: all 0.25s ease-in;
+}
+#menu-toggle li:hover, #menu-toggle li:active {
+  background: #F2AECE;
+  border-color: #F2AECE;
+}
+#menu-toggle li:first-child {
+  margin-left: 1rem;
+}
+#menu-toggle li:last-child {
+  margin-right: 1rem;
+}
+
+.hide-menu {
+  display: none;
+}
+
+.show-menu {
+  display: block;
+}
+
+.active-menu {
+  background: #e76ca6;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-size: 1.15rem;
+  margin-top: 1rem;
+}
+
+td {
+  line-height: 1.75;
+  padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+  background: #f0f6fa;
+}
+
+td:nth-of-type(2) {
+  text-align: right;
+}
+
+.m-1 {
+  margin-top: 1.5rem;
+}
+
+.vwidth {
+  margin-top: 1.5rem;
+  width: min(90vw, 500px);
+}
+
+.email-signup-wrap {
+  display: flex;
+}
+
+.email-signup {
+  padding: 4rem 0;
+}
+
+#email-signup {
+  padding: 0.5rem;
+  width: 60vw;
+  border-radius: 0px;
+  border: 1px solid #333;
+}
+
+#email-signup:focus {
+  outline: 1px solid purple;
+}
+
+#email-submit {
+  background: #333;
+  color: #f1f1f1;
+  border: 1px solid #333;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  padding: 1.25rem 0;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+footer ul a {
+  color: #fff;
+}
+
+.footer-link {
+  background: #333;
+  border-bottom: 1px solid #f1f1f1;
+  color: #f1f1f1;
+  display: block;
+  transition: all 0.25s ease-in;
+}
+.footer-link:hover, .footer-link:active {
+  background: #4d4d4d;
+}
+
+.hero {
+  background: tomato;
+  width: 100%;
+  height: 300px;
+}
+
+.carousel-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile-carousel {
+  display: flex;
+  gap: 5px;
+  height: 320px;
+  overflow-x: auto;
+  width: 100vw;
+  -ms-scroll-snap-type: x mandatory;
+  -ms-scroll-snap-type-scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-carousel div {
+  display: flex;
+  flex: 0 0 320px;
+  justify-content: center;
+  scroll-snap-align: start;
+  border: 1px solid #333;
+}
+
+.testimonial-section {
+  background: #F2F0EF;
+  margin-top: 2.5rem;
+  padding: 6rem 0 2rem 0;
+  position: relative;
+}
+
+.testimonials {
+  background: #91BDD9;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: -90px;
+  height: 130px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  padding: 0 1rem;
+  top: -25px;
+  width: 250px;
+}
+.testimonials h4 {
+  text-align: center;
+  width: 100%;
+}

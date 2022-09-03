@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Open+Sans:wght@500&display=swap')
+
+// TABLE OF CONTENTS
+// 1 - Vars
+// 2 - Global Styles
+// 3 - Nav
+// 3.1 - Mobile Nav 
+// 4 - 
+// 5 - Food Menu
+// 6 - 
+// 7 - Contact Form
+// 8 - Footer
+/// END TABLE OF CONTENTS **/
+
+// 1 Vars
+$light-grey: #F2F0EF
+$pink: #F2AECE
+$maroon: #733244
+$light-blue: #91BDD9
+$black: #333
+$white: #f1f1f1
+$btn-transition: all 0.25s ease-in
+
+
+// 2 Global Styles
+*   
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+h1,
+h2,
+h3,
+h4
+    font-family: 'Comfortaa', cursive
+    margin: 1.25rem 0
+
+p,
+span,
+a,
+button,
+input,
+textarea,
+label,
+li,
+table,
+td
+    font-family: 'Open Sans', sans-serif
+section
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow-x: hidden
+
+// 3 Nav
+    
+// 3.1 Mobile Nav
+.mobile-nav
+    width: 100%
+    text-align: center
+    > div
+        padding: 1.5rem
+        text-align: right
+#hamburger
+    width: 40px
+    border: 2px solid $black
+    margin-top: 0.15rem
+    position: relative
+    left: calc(85% + 5px)
+    border-radius: 4px
+#hamburger::before
+    content: ''
+    display: block
+    border: 2px solid purple
+    position: absolute
+    width: 36px
+    right: -2px
+    top: 8px
+    border-radius: 4px
+#hamburger::after
+    content: ''
+    display: block
+    border: 2px solid green
+    position: absolute
+    width: 36px
+    right: -2px
+    top: -12px
+    border-radius: 4px
+
+#hamburger + ul a
+    display: block
+    background: $light-blue
+    color: $white
+    border-bottom: 1px solid $white
+    transition: $btn-transition
+    &:first-of-type
+        border-top: none
+    &:hover,
+    &:active
+        background: darken($light-blue, 10%)
+.show-nav
+    display: block
+
+.hide-nav
+    display: none
+
+// 5 Food Menu
+#menu-toggle
+    display: flex
+    justify-content: space-between
+    width: min(100%, 700px)
+    li
+        border: 1px solid $white
+        cursor: pointer
+        padding: 1rem
+        transition: $btn-transition
+
+        &:hover,
+        &:active
+            background: $pink
+            border-color: $pink
+    li:first-child
+        margin-left: 1rem
+    li:last-child
+        margin-right: 1rem
+
+.hide-menu
+    display: none
+.show-menu
+    display: block
+.active-menu
+    background: darken($pink, 15%)
+
+table
+    width: 100%
+th
+    text-align: left
+    font-size: 1.15rem
+    margin-top: 1rem
+td
+   line-height: 1.75
+   padding: 0.5rem
+tr:nth-child(even)
+    background: lighten($light-blue, 25%)
+td:nth-of-type(2)
+    text-align: right
+.m-1
+    margin-top: 1.5rem
+.vwidth
+    margin-top: 1.5rem
+    width : min(90vw, 500px)
+
+// 7 Contact Form
+.email-signup-wrap
+    display: flex
+
+.email-signup
+    padding: 4rem 0
+
+#email-signup
+    padding: 0.5rem
+    width: 60vw
+    border-radius: 0px
+    border: 1px solid $black
+#email-signup:focus
+    outline: 1px solid purple
+
+#email-submit
+    background: $black
+    color: $white
+    border: 1px solid $black
+    padding: 1rem
+
+
+
+
+// 8 Footer
+footer
+    text-align: center
+    width: 100%
+
+    
+li
+    list-style: none
+    padding: 1.25rem 0
+
+
+ul a
+    text-decoration: none
+
+footer ul a
+    color: #fff
+
+.footer-link
+    background: $black
+    border-bottom: 1px solid $white
+    color: $white
+    display: block
+    transition: $btn-transition
+    &:hover,
+    &:active
+        background: lighten($black, 10%)        
+
+
+// Misc
+.hero
+    background: tomato
+    width: 100%
+    height: 300px
+    
+.carousel-control
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+.mobile-carousel
+  display: flex
+  gap: 5px
+  height: 320px
+  overflow-x: auto
+  width: 100vw
+  -ms-scroll-snap-type: x mandatory
+      scroll-snap-type: x mandatory
+  scrollbar-width: none
+
+.mobile-carousel::-webkit-scrollbar 
+  display: none
+
+.mobile-carousel div 
+  display: flex
+  flex: 0 0 320px
+  justify-content: center
+  scroll-snap-align: start
+  border: 1px solid $black
+
+
+
+.testimonial-section
+    background: $light-grey
+    margin-top: 2.5rem
+    padding: 6rem 0 2rem 0
+    position: relative
+.testimonials
+    background: $light-blue
+    transform: rotate(-45deg)
+    position: absolute
+    left: -90px
+    height: 130px
+    display: flex
+    align-items: flex-end
+    text-align: center
+    padding: 0 1rem
+    top: -25px
+    width: 250px
+    h4
+        text-align: center
+        width: 100%
