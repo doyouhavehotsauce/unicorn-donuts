@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>TikTok-hover</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sandbox" transform="translate(-358.000000, -974.000000)">
+            <g id="TikTok-hover" transform="translate(358.000000, 974.000000)">
+                <rect id="back-2" fill="#4D4D4D" fill-rule="nonzero" x="0" y="0" width="50" height="50"></rect>
+                <path d="M30.9823529,9.70588235 C31.5,14.0529412 33.9235294,16.6411765 38.1176471,16.9058824 L38.1176471,21.7647059 C35.6764706,22 33.5411765,21.1764706 31.0588235,19.7058824 L31.0588235,28.8352941 C31.0588235,40.4470588 18.4,44.0647059 13.3235294,35.7529412 C10.0529412,30.4058824 12.0588235,21 22.5470588,20.6352941 L22.5470588,25.7941176 C21.7253008,25.927631 20.9150574,26.1242921 20.1235294,26.3823529 C17.7705882,27.1647059 16.4764706,28.6529412 16.8411765,31.2588235 C17.5529412,36.2529412 26.7117647,37.7294118 25.9470588,27.9764706 L25.9470588,9.72352941 L31.0058824,9.72352941 L30.9823529,9.70588235 Z" id="Path" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

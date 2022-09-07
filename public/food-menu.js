@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    console.log('food menu js')
+    console.log('food menu js public')
     
         const coffeeBtn = document.getElementById('coffee')
         const coffeeMenu = document.getElementById('coffee-tbl')
@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function(){
         })
         juiceBtn.addEventListener('click', () => {
             console.log('juice click')
+            coffeeBtn.removeAttribute('class')
+            donutBtn.removeAttribute('class')
+            juiceBtn.removeAttribute('class')
             
             coffeeMenu.removeAttribute('class')
             donutMenu.removeAttribute('class')
