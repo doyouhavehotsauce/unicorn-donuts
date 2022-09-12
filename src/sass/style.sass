@@ -55,6 +55,8 @@ section
 @media ( min-width: $desktop)
     section
         display: block
+li
+    list-style: none
 // 3 Nav
 .wrap
     margin: 2rem auto   
@@ -112,6 +114,25 @@ section
 
 .hide-nav
     display: none
+.navScrollDown
+    animation: scrollDown 0.25s linear forwards
+@keyframes scrollDown
+    0% 
+        width: 100px
+        height: 100px
+    100%
+        width: 50px
+        height: 50px
+
+.navScrollUp
+    animation: scrollUp 0.25s linear forwards
+@keyframes scrollUp
+    0% 
+        width: 50px
+        height: 50px
+    100%
+        width: 100px
+        height: 100px
 
 // 5 Food Menu
 #menu-toggle
@@ -216,10 +237,13 @@ input[type='file']
 // 8 Footer
 footer
     text-align: center
-    width: 100%   
-li
-    list-style: none
-    padding: 1.25rem 0
+    width: 100% 
+    div
+        ul
+            margin-bottom: 8rem
+            li
+                list-style: none
+                padding: .5rem 0
 ul a
     text-decoration: none
 
@@ -245,14 +269,18 @@ footer ul a
     .desktop
         display: block
         text-align: left
-    .desktop-nav
+    #desktop-nav
         display: grid
         grid-template-columns: 10rem 1fr
+        position: fixed
+        width: 100vw
+        background: white
         .desktop-logo
             width: 100px
             background: blue
             border-radius: 50%
             height: 100px
+            margin: 0.5rem 0.5rem 0.5rem 1rem
         .desktop-links
             display: flex
             align-items: center
@@ -273,16 +301,10 @@ footer ul a
             border: none
             display: block
             text-align: left
-            position: relative
             &:active,
             &:hover
                 background: $black
-                li:after
-                    content: url('../assets/right-arrow-white.svg')
-                    display: block
-                    position: absolute
-                    left: 40%
-                    top: 20px
+
 .social-icons
     background: $black
     border-bottom: 1px solid $white
@@ -309,6 +331,8 @@ footer ul a
 #tiktok
     background-position: center
     background-repeat: no-repeat
+    border-radius: 50%
+    cursor: pointer
     display: inline-block
     height: 50px 
     width: 50px   
@@ -328,7 +352,39 @@ footer ul a
 #email-submit
     background: $white
     color: $black
-
+    cursor: pointer
+#email-submit-desktop
+    cursor: pointer
+    padding: 1rem 0.25rem
+    &:hover .btn-arrow
+        width: 35px
+.dark
+.btn-arrow
+    display: block
+    width: 30px
+    border-radius: 4px
+    background: $black
+    height: 3px
+    position: relative
+    transition: all 0.5s ease-in-out
+    &::after,
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        width: 16px
+        height: 3px
+        border-radius: 4px
+    &::after
+        background: $black
+        rotate: -45deg
+        right: -2px
+        bottom: -5px
+    &::before
+        background: $black
+        rotate: 45deg
+        right: -2px
+        top: -5px
 
 // Misc
 .hero

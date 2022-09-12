@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
-    console.log('contact form js public')
-        
+console.log('contact form js src')
+    
+
+
     
     
-        
-        
-        
-        
-        
-        
-        
-        }); //close dom listner
+    
+    
+    
+    
+    
+    }); //close dom listner
