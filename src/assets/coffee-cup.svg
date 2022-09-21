@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="106px" viewBox="0 0 69 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>coffee-cup</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sandbox" transform="translate(-1846.000000, -2701.000000)" stroke="#333333" stroke-width="5">
+            <g id="coffee-cup" transform="translate(1849.000000, 2704.000000)">
+                <rect id="Rectangle" x="0" y="12.6373626" width="63.1868132" height="10.4395604" rx="4"></rect>
+                <path d="M4.3956044,23.0769231 L59.3406593,23.0769231 L55.6370149,97.1498129 C55.5571835,98.7464409 54.2393804,100 52.6407578,100 L11.6246742,100 C10.0343058,100 8.72029037,98.7589276 8.62956018,97.1711494 L4.3956044,23.0769231 L4.3956044,23.0769231 Z" id="Rectangle"></path>
+                <line x1="6.5" y1="42.5" x2="57.967033" y2="42.5824176" id="Line-4" stroke-linecap="square"></line>
+                <line x1="7.96703297" y1="80.4945055" x2="56.043956" y2="80.7692308" id="Line-4-Copy" stroke-linecap="square"></line>
+                <path d="M11.5448585,0 L51.5859485,0 C54.4856653,2.13186591e-15 56.9704508,2.07374319 57.4891679,4.92668737 L58.7912088,12.0879121 L58.7912088,12.0879121 L4.94505495,12.6373626 L5.56741497,5.4802223 C5.83702764,2.37967662 8.43261261,-1.20464654e-15 11.5448585,0 Z" id="Rectangle"></path>
+            </g>
+        </g>
+    </g>
+</svg>

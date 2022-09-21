@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>donut-menu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sandbox" transform="translate(-2021.000000, -2702.000000)" stroke="#333333" stroke-width="5">
+            <g id="donut-menu" transform="translate(2021.000000, 2702.000000)">
+                <circle id="Oval" cx="50" cy="50" r="12.1666667"></circle>
+                <circle id="Oval" cx="50" cy="50" r="47.5"></circle>
+                <path d="M7,70 C9.75814249,75.7150382 13.2025869,78.1594826 17.3333333,77.3333333 C23.5294529,76.0941094 21.3333333,70 28,69.3333333 C34.6666667,68.6666667 30,82.6666667 39.3333333,82.6666667 C48.6666667,82.6666667 42.6666667,69.3333333 50,69.3333333 C57.3333333,69.3333333 49.3333333,86.6666667 61.3333333,86.6666667 C73.3333333,86.6666667 64,66.6666667 72.6666667,67.3333333 C81.3333333,68 80.6666667,83.3333333 85.3333333,82" id="Line-5" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

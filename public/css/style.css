@@ -41,8 +41,12 @@ li {
 }
 
 .wrap {
-  margin: 2rem auto;
   width: 90vw;
+  margin: 0 auto;
+}
+
+.nav-clear {
+  margin: 115px auto 2rem auto;
 }
 
 @media (min-width: 1024px) {
@@ -110,6 +114,11 @@ li {
 
 .hide-nav {
   display: none;
+}
+
+.navScrollLoad {
+  width: 100px;
+  height: 100px;
 }
 
 .navScrollDown {
@@ -280,12 +289,9 @@ footer {
   text-align: center;
   width: 100%;
 }
-footer div ul {
-  margin-bottom: 8rem;
-}
 footer div ul li {
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 1.5rem 0;
 }
 
 ul a {
@@ -317,6 +323,12 @@ footer ul a {
 }
 
 @media (min-width: 1024px) {
+  footer div ul {
+    margin-bottom: 8rem;
+  }
+  footer div ul li {
+    padding: 0.5rem 0;
+  }
   .mobile {
     display: none;
   }
@@ -332,10 +344,8 @@ footer ul a {
     background: white;
   }
   #desktop-nav .desktop-logo {
-    width: 100px;
     background: blue;
     border-radius: 50%;
-    height: 100px;
     margin: 0.5rem 0.5rem 0.5rem 1rem;
   }
   #desktop-nav .desktop-links {
@@ -412,11 +422,10 @@ footer ul a {
     border: none;
     justify-content: flex-start;
   }
+  .email-signup-wrap {
+    justify-content: flex-start;
+  }
 }
-.email-signup-wrap {
-  justify-content: flex-start;
-}
-
 #email-signup {
   align-items: flex-start;
   background: #f1f1f1;
