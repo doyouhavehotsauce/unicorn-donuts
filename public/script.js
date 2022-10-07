@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-    const hamburgerToggle = document.getElementById('hamburger')
+    const hamburgerToggle = document.getElementById('hamburger-toggle')
     let loadCount = 0
     hamburgerToggle.addEventListener('click', () => {
         
             const getNav = document.getElementById('nav-menu')
+            const hamburger = document.getElementById('hamburger')
+            
             if(getNav.classList.contains('show-nav') ){
                 getNav.classList.remove('show-nav')
                 getNav.classList.add('hide-nav')
+                hamburger.classList.remove('showX')
+
             } else {
                 getNav.classList.remove('hide-nav')
                 getNav.classList.add('show-nav')
+
+                hamburger.classList.add('showX')
+
             }
     })
 
@@ -20,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // }, { passive: true });
     window.addEventListener('scroll', () => {
-        console.log(window.scrollY)
         let grabNav = document.querySelector('.desktop-logo')
 
         // when page loads - load count = 0 and pageLoad class is in place

@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
-console.log('contact form js src')
-    
+
+    let formBtn = document.getElementById('submit-form')
+    formBtn = formBtn.addEventListener('click', submitForm)
+    function submitForm(){
+        console.log('submit form btn')
+    }
 
 
     

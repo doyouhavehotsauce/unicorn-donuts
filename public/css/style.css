@@ -8,7 +8,9 @@
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-family: "Comfortaa", cursive;
   margin: 1.25rem 0;
 }
@@ -22,6 +24,11 @@ li,
 table,
 td {
   font-family: "Open Sans", sans-serif;
+}
+
+p:first-letter {
+  color: #F2AECE;
+  font-size: 2.25rem;
 }
 
 section {
@@ -38,6 +45,7 @@ section {
 }
 li {
   list-style: none;
+  padding: 1rem 0;
 }
 
 .wrap {
@@ -45,37 +53,86 @@ li {
   margin: 0 auto;
 }
 
-.nav-clear {
-  margin: 115px auto 2rem auto;
-}
-
 @media (min-width: 1024px) {
   .wrap {
     width: 60vw;
+  }
+  .nav-clear {
+    margin: 115px auto 2rem auto;
   }
 }
 .mobile-nav {
   width: 100%;
   text-align: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1490196078);
+  position: fixed;
+  background: white;
 }
 .mobile-nav > div {
-  padding: 1.5rem;
+  padding: 0.5rem;
   text-align: right;
+  min-height: 2.75rem;
+  margin-top: 0.75rem;
 }
 
+.showX#hamburger {
+  border: none;
+}
+
+.showX#hamburger::before,
+.showX#hamburger::after {
+  top: -1px;
+}
+
+.showX#hamburger::before {
+  transform: rotate(45deg);
+  animation-name: topBurger;
+  animation-duration: 100ms;
+  animation-timing-function: ease;
+  animation-direction: forward;
+}
+
+.showX#hamburger::after {
+  transform: rotate(-45deg);
+  animation-name: bottomBurger;
+  animation-duration: 100ms;
+  animation-timing-function: ease;
+  animation-direction: forward;
+}
+
+@keyframes topBurger {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes bottomBurger {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
 #hamburger {
   width: 40px;
   border: 2px solid #333;
-  margin-top: 0.15rem;
+  margin: 0.15rem;
   position: relative;
-  left: calc(85% + 5px);
   border-radius: 4px;
+  float: right;
+  top: 5px;
+}
+#hamburger:hover {
+  cursor: pointer;
 }
 
 #hamburger::before {
   content: "";
   display: block;
-  border: 2px solid purple;
+  border: 2px solid #333;
   position: absolute;
   width: 36px;
   right: -2px;
@@ -86,7 +143,7 @@ li {
 #hamburger::after {
   content: "";
   display: block;
-  border: 2px solid green;
+  border: 2px solid #333;
   position: absolute;
   width: 36px;
   right: -2px;
@@ -94,11 +151,15 @@ li {
   border-radius: 4px;
 }
 
+#nav-menu a li {
+  background: white;
+}
+
 #hamburger + ul a {
   display: block;
   background: #91BDD9;
-  color: #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  color: #fff;
+  border-bottom: 1px solid #fff;
   transition: all 0.25s ease-in;
 }
 #hamburger + ul a:first-of-type {
@@ -111,7 +172,23 @@ li {
 .show-nav {
   display: block;
 }
+.show-nav li {
+  animation-name: mobile-nav-open;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-direction: forward;
+}
 
+@keyframes mobile-nav-open {
+  0% {
+    padding: 0;
+    opacity: 0;
+  }
+  100% {
+    padding: 1rem 0;
+    opacity: 1;
+  }
+}
 .hide-nav {
   display: none;
 }
@@ -151,24 +228,50 @@ li {
 }
 #menu-toggle {
   display: flex;
-  justify-content: space-between;
-  width: min(100%, 700px);
+  justify-content: center;
+  margin-top: 4rem;
 }
 #menu-toggle li {
-  border: 1px solid #f1f1f1;
+  border-bottom: 3px solid transparent;
   cursor: pointer;
+  font-size: 1.5rem;
   padding: 1rem;
   transition: all 0.25s ease-in;
 }
 #menu-toggle li:hover, #menu-toggle li:active {
-  background: #F2AECE;
   border-color: #F2AECE;
 }
-#menu-toggle li:first-child {
-  margin-left: 1rem;
+#menu-toggle li:nth-child(2) {
+  margin: 0 2rem;
 }
-#menu-toggle li:last-child {
+
+#coffee-tbl div,
+#juice-tbl div,
+#donuts-tbl div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#coffee-tbl div img,
+#juice-tbl div img,
+#donuts-tbl div img {
+  height: 50px;
   margin-right: 1rem;
+  margin-left: -50px;
+}
+#coffee-tbl div h2,
+#juice-tbl div h2,
+#donuts-tbl div h2 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+#coffee-tbl > table,
+#juice-tbl > table,
+#donuts-tbl > table {
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 0px #737373;
+  margin: 1rem auto 3rem auto;
 }
 
 .hide-menu {
@@ -180,26 +283,21 @@ li {
 }
 
 .active-menu {
-  background: #e76ca6;
-}
-
-table {
-  width: 100%;
+  color: #F2AECE;
+  border-bottom: 3px solid #8b164d;
 }
 
 th {
   text-align: left;
   font-size: 1.15rem;
   margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #d0c8c5;
 }
 
 td {
   line-height: 1.75;
   padding: 0.5rem;
-}
-
-tr:nth-child(even) {
-  background: #f0f6fa;
 }
 
 td:nth-of-type(2) {
@@ -213,6 +311,16 @@ td:nth-of-type(2) {
 .vwidth {
   margin: 1.5rem auto;
   width: min(90vw, 500px);
+}
+
+.location-card {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.location-map {
+  margin-right: 1rem;
+  width: 400px;
 }
 
 input,
@@ -230,16 +338,13 @@ textarea {
 
 input {
   padding: 0.5rem 0 0.5rem 0.5rem;
-  width: calc(100% - 0.5rem);
+  width: calc(100% - 0.75rem);
 }
 
 textarea {
+  padding: 0.5rem 0 0.5rem 0.5rem;
   resize: none;
-  width: 100%;
-}
-
-input[type=file] {
-  border: none;
+  width: calc(100% - 0.75rem);
 }
 
 .email-signup-wrap {
@@ -252,6 +357,10 @@ input[type=file] {
 .email-signup {
   padding: 4rem 0;
   width: 100%;
+}
+
+.email-signup.mobile .email-signup-wrap input {
+  text-align: left;
 }
 
 .email-submit {
@@ -278,11 +387,21 @@ input[type=file] {
   outline: 1px solid purple;
 }
 
+#email-form {
+  flex-direction: column;
+}
+
 #email-submit {
   background: #333;
-  color: #f1f1f1;
+  color: #fff;
   border: 1px solid #333;
   padding: 1rem;
+}
+
+#form-success {
+  margin: 4rem 0;
+  text-align: center;
+  display: none;
 }
 
 footer {
@@ -304,13 +423,14 @@ footer ul a {
 
 .footer-link {
   background: #333;
-  border-bottom: 1px solid #f1f1f1;
-  color: #f1f1f1;
+  border-bottom: 1px solid #fff;
+  color: #fff;
   display: block;
   transition: all 0.25s ease-in;
 }
 .footer-link:hover, .footer-link:active {
   background: #4d4d4d;
+  color: #e45699;
 }
 
 .mobile {
@@ -341,7 +461,8 @@ footer ul a {
     grid-template-columns: 10rem 1fr;
     position: fixed;
     width: 100vw;
-    background: white;
+    background: #fff;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1490196078);
   }
   #desktop-nav .desktop-logo {
     background: blue;
@@ -356,7 +477,7 @@ footer ul a {
   }
   footer {
     background: #333;
-    color: #f1f1f1;
+    color: #fff;
     display: grid;
     grid-template-columns: 20% 1fr 1fr 20%;
     grid-template-rows: 1fr;
@@ -378,7 +499,7 @@ footer ul a {
 }
 .social-icons {
   background: #333;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #fff;
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem 0;
@@ -428,14 +549,16 @@ footer ul a {
 }
 #email-signup {
   align-items: flex-start;
-  background: #f1f1f1;
+  background: #fff;
+  color: #333;
   grid-column-start: 3;
   grid-column-end: 4;
   width: 15rem;
+  text-align: left;
 }
 
 #email-submit {
-  background: #f1f1f1;
+  background: #fff;
   color: #333;
   cursor: pointer;
 }
@@ -444,11 +567,11 @@ footer ul a {
   cursor: pointer;
   padding: 1rem 0.25rem;
 }
-#email-submit-desktop:hover .btn-arrow {
+#email-submit-desktop:hover .btn-arrow, #email-submit-desktop:hover .btn-arrow-mobile {
   width: 35px;
 }
 
-.btn-arrow {
+.btn-arrow, .btn-arrow-mobile {
   display: block;
   width: 30px;
   border-radius: 4px;
@@ -457,7 +580,7 @@ footer ul a {
   position: relative;
   transition: all 0.5s ease-in-out;
 }
-.btn-arrow::after, .btn-arrow::before {
+.btn-arrow::after, .btn-arrow-mobile::after, .btn-arrow::before, .btn-arrow-mobile::before {
   content: "";
   display: block;
   position: absolute;
@@ -465,17 +588,30 @@ footer ul a {
   height: 3px;
   border-radius: 4px;
 }
-.btn-arrow::after {
+.btn-arrow::after, .btn-arrow-mobile::after {
   background: #333;
   rotate: -45deg;
   right: -2px;
   bottom: -5px;
 }
-.btn-arrow::before {
+.btn-arrow::before, .btn-arrow-mobile::before {
   background: #333;
   rotate: 45deg;
   right: -2px;
   top: -5px;
+}
+
+.btn-arrow-mobile {
+  width: 20px;
+}
+.btn-arrow-mobile::before, .btn-arrow-mobile::after {
+  width: 10px;
+}
+.btn-arrow-mobile::before {
+  top: -3px;
+}
+.btn-arrow-mobile::after {
+  bottom: -3px;
 }
 
 .hero {

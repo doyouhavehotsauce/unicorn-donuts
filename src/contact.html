@@ -10,13 +10,12 @@
 <body>
     <section>
         <div class="mobile-nav mobile">
-            <div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
 
             <ul id="nav-menu" class="hide-nav">
                 <a href="./index.html"><li>Home</li></a>
-                <a href="./shop.html"><li>Shop</li></a>
                 <a href="./about.html"><li>About</li></a>
                 <a href="./menu.html"><li>Menu</li></a>
                 <a href="./locations.html"><li>Locations</li></a>
@@ -28,7 +27,6 @@
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
-                <a href="./shop.html"><li>Shop</li></a>
                 <a href="./about.html"><li>About</li></a>
                 <a href="./menu.html"><li>Menu</li></a>
                 <a href="./locations.html"><li>Locations</li></a>
@@ -43,7 +41,7 @@
         </p>
     </div>
 
-<div class="email-signup-wrap">
+<div class="email-signup-wrap" id="email-form">
     <form action="POST" class="email-signup">
         <label for="name">Name</label>
         <input type="text" id="name" required>
@@ -53,26 +51,16 @@
         
         <label for="message">Message</label>
         <textarea name="message" id="message" rows="10"  required ></textarea>
-    
-        <label for="attached-file">Attach a file</label>
-        <input type="file" name="attached-file" id="attached-file">
-    
-        <button type="submit" class="email-submit">Submit</button>
+
+        <button type="submit" class="email-submit" id="submit-form">Submit</button>
     </form>
+    <div id="form-success">
+        <h2>Got it! We'll be in touch</h2>
+    </div>
 </div>
 
 
 
-<section class="email-signup mobile">
-    <h3>Email sign up</h3>
-    <p>Sign up to stay in the loop</p>
-    <div class="email-signup-wrap">
-        <label for="email-signup"></label>
-        <input type="text" id="email-signup" name="email-signup">
-        <button role="submit" id="email-submit"><span id="btn-arrow black"></span></button>
-    </div>
-
-</section>
 
 
 <footer>
@@ -91,8 +79,7 @@
     </div>
 
     <section class="email-signup desktop">
-        <h3>Email sign up</h3>
-        <p>Sign up to stay in the loop</p>
+        <h3>Sign up for updates and coupons</h3>
         <div class="email-signup-wrap">
             <label for="email-signup"></label>
             <input type="text" id="email-signup" name="email-signup">

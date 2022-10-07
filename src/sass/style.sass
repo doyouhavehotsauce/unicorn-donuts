@@ -7,7 +7,7 @@
 // 3.1 - Mobile Nav 
 // 4 - 
 // 5 - Food Menu
-// 6 - 
+// 6 - Location Card
 // 7 - Contact Form
 // 8 - Footer
 /// END TABLE OF CONTENTS **/
@@ -21,7 +21,7 @@ $pink: #F2AECE
 $maroon: #733244
 $light-blue: #91BDD9
 $black: #333
-$white: #f1f1f1
+$white: #fff
 $btn-transition: all 0.25s ease-in
 
 
@@ -34,7 +34,9 @@ $btn-transition: all 0.25s ease-in
 h1,
 h2,
 h3,
-h4
+h4,
+h5,
+h6
     font-family: 'Comfortaa', cursive
     margin: 1.25rem 0
 
@@ -47,6 +49,9 @@ li,
 table,
 td
     font-family: 'Open Sans', sans-serif
+p:first-letter
+    color: $pink
+    font-size: 2.25rem
 section
     display: flex
     flex-direction: column
@@ -57,36 +62,76 @@ section
         display: block
 li
     list-style: none
+    padding: 1rem 0
 
 
 // 3 Nav
 .wrap
     width: 90vw
     margin: 0 auto
-.nav-clear
-    margin: 115px auto 2rem auto
+
 @media ( min-width: $desktop)
     .wrap
         width: 60vw
+    .nav-clear
+        margin: 115px auto 2rem auto
     
 // 3.1 Mobile Nav
 .mobile-nav
     width: 100%
     text-align: center
+    box-shadow: 0 0 0.5rem #00000026
+    position: fixed
+    background: white
     > div
-        padding: 1.5rem
+        padding: 0.5rem
         text-align: right
+        min-height: 2.75rem
+        margin-top: 0.75rem
+.showX#hamburger
+    border: none
+.showX#hamburger::before,
+.showX#hamburger::after
+    top: -1px
+.showX#hamburger::before
+    transform: rotate(45deg)
+    animation: 
+        name: topBurger
+        duration: 100ms
+        timing-function: ease
+        direction: forward
+.showX#hamburger::after
+    transform: rotate(-45deg)
+    animation: 
+        name: bottomBurger
+        duration: 100ms
+        timing-function: ease
+        direction: forward
+@keyframes topBurger
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(45deg)
+@keyframes bottomBurger
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(-45deg)
+
 #hamburger
     width: 40px
     border: 2px solid $black
-    margin-top: 0.15rem
+    margin: 0.15rem
     position: relative
-    left: calc(85% + 5px)
     border-radius: 4px
+    float: right
+    top: 5px
+    &:hover
+        cursor: pointer
 #hamburger::before
     content: ''
     display: block
-    border: 2px solid purple
+    border: 2px solid $black
     position: absolute
     width: 36px
     right: -2px
@@ -95,13 +140,14 @@ li
 #hamburger::after
     content: ''
     display: block
-    border: 2px solid green
+    border: 2px solid $black
     position: absolute
     width: 36px
     right: -2px
     top: -12px
     border-radius: 4px
-
+#nav-menu a li
+    background: lighten($light-grey, 20%)
 #hamburger + ul a
     display: block
     background: $light-blue
@@ -115,6 +161,20 @@ li
         background: darken($light-blue, 10%)
 .show-nav
     display: block
+    li
+        animation: 
+            name: mobile-nav-open
+            duration: 200ms
+            timing-function: ease-out
+            direction: forward
+
+@keyframes mobile-nav-open 
+    0%
+        padding: 0
+        opacity: 0
+    100%
+        padding: 1rem 0
+        opacity: 1
 
 .hide-nav
     display: none
@@ -144,41 +204,58 @@ li
 // 5 Food Menu
 #menu-toggle
     display: flex
-    justify-content: space-between
-    width: min(100%, 700px)
+    justify-content: center
+    margin-top: 4rem
     li
-        border: 1px solid $white
+        border-bottom: 3px solid transparent
         cursor: pointer
+        font-size: 1.5rem
         padding: 1rem
         transition: $btn-transition
 
         &:hover,
         &:active
-            background: $pink
             border-color: $pink
-    li:first-child
-        margin-left: 1rem
-    li:last-child
-        margin-right: 1rem
+    li:nth-child(2)
+        margin: 0 2rem
+#coffee-tbl,
+#juice-tbl,
+#donuts-tbl
+    div
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-top: 2rem
+        img
+            height: 50px
+            margin-right: 1rem
+            margin-left: -50px
+        h2
+            font-size: 3rem
+            margin-bottom: 0
+    > table
+        border-radius: 8px
+        box-shadow: 0px 0px 2px 0px lighten($black, 25%)
+        margin: 1rem auto 3rem auto
 
 .hide-menu
     display: none
 .show-menu
     display: block
 .active-menu
-    background: darken($pink, 15%)
+    color: $pink
+    border-bottom: 3px solid darken($pink, 50%)
 
-table
-    width: 100%
+
 th
     text-align: left
     font-size: 1.15rem
     margin-top: 1rem
+    padding: 0.5rem 0
+    border-bottom: 1px solid darken($light-grey, 15%)
 td
    line-height: 1.75
    padding: 0.5rem
-tr:nth-child(even)
-    background: lighten($light-blue, 25%)
 td:nth-of-type(2)
     text-align: right
 .m-1
@@ -186,6 +263,16 @@ td:nth-of-type(2)
 .vwidth
     margin: 1.5rem auto 
     width : min(90vw, 500px)
+
+// 6 Location Card
+.location-card
+    display: flex
+    justify-content: space-evenly
+.location-map
+    margin-right: 1rem
+    width: 400px
+
+
 
 // 7 Contact Form
 input,
@@ -200,12 +287,12 @@ textarea
 
 input
     padding: 0.5rem 0 0.5rem 0.5rem
-    width: calc(100% - 0.5rem)
+    width: calc(100% - 0.75rem)
 textarea
+    padding: 0.5rem 0 0.5rem 0.5rem
     resize: none
-    width: 100%
-input[type='file']
-    border: none
+    width: calc(100% - 0.75rem)
+
 .email-signup-wrap
     display: flex
     justify-content: center
@@ -214,6 +301,11 @@ input[type='file']
 .email-signup
     padding: 4rem 0
     width: 100%
+.email-signup.mobile
+    > span
+    .email-signup-wrap
+        input
+            text-align: left
 .email-submit
     width: 100%
     background: $pink
@@ -231,12 +323,17 @@ input[type='file']
     border: 1px solid $black
 #email-signup:focus
     outline: 1px solid purple
-
+#email-form
+    flex-direction: column
 #email-submit
     background: $black
     color: $white
     border: 1px solid $black
     padding: 1rem
+#form-success
+    margin: 4rem 0
+    text-align: center
+    display: none
 
 
 
@@ -263,7 +360,8 @@ footer ul a
     transition: $btn-transition
     &:hover,
     &:active
-        background: lighten($black, 10%)        
+        background: lighten($black, 10%)
+        color: darken($pink, 20%)
 .mobile
     display: block
     text-align: center
@@ -287,7 +385,8 @@ footer ul a
         grid-template-columns: 10rem 1fr
         position: fixed
         width: 100vw
-        background: white
+        background: #fff
+        box-shadow: 0 0 0.5rem #00000026
         .desktop-logo
             background: blue
             border-radius: 50%
@@ -357,9 +456,11 @@ footer ul a
 #email-signup
     align-items: flex-start
     background: $white
+    color: $black
     grid-column-start: 3
     grid-column-end: 4
     width: 15rem
+    text-align: left
 #email-submit
     background: $white
     color: $black
@@ -369,7 +470,7 @@ footer ul a
     padding: 1rem 0.25rem
     &:hover .btn-arrow
         width: 35px
-.dark
+
 .btn-arrow
     display: block
     width: 30px
@@ -396,6 +497,17 @@ footer ul a
         rotate: 45deg
         right: -2px
         top: -5px
+.btn-arrow-mobile
+    @extend .btn-arrow
+    width: 20px
+    &::before,
+    &::after
+        width: 10px
+    &::before
+        top: -3px
+    &::after
+        bottom: -3px
+
 
 // Misc
 .hero
