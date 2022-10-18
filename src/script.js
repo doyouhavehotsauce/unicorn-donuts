@@ -36,10 +36,11 @@ document.addEventListener("DOMContentLoaded", function(){
         if(window.scrollY > 100 && loadCount == 0){
             grabNav.classList.add('navScrollDown')
             grabNav.classList.remove('navScrollLoad')
+            grabNav.classList.remove('navScrollUp')
             loadCount += 1
         } else if(window.scrollY < 100 && loadCount >= 1){
             grabNav.classList.add('navScrollUp')
-            grabNav.classList.remove('navScrollDOwn')
+            grabNav.classList.remove('navScrollDown')
             grabNav.classList.remove('navScrollLoad')
             loadCount += 1
         } else if (window.scrollY > 100 && loadCount >= 1){

@@ -23,7 +23,8 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div>
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -42,7 +43,7 @@
     </div>
 
 <div class="email-signup-wrap" id="email-form">
-    <form action="POST" class="email-signup">
+    <form class="email-signup" onsubmit="sendMail(); reset(); return false">
         <label for="name">Name</label>
         <input type="text" id="name" required>
         
@@ -88,7 +89,7 @@
 
     </section>
 </footer>
-    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./script.js"></script>
     <script src="./contact-form.js"></script>
 

@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function(){
         juiceMenu.classList.add('hide-menu')
     })
     juiceBtn.addEventListener('click', () => {
-        console.log('juice click')
         coffeeBtn.removeAttribute('class')
         donutBtn.removeAttribute('class')
         juiceBtn.removeAttribute('class')

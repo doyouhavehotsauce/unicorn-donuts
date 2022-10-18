@@ -10,7 +10,7 @@
 <body>
     <section>
         <div class="mobile-nav mobile">
-            <div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
 
@@ -23,7 +23,8 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div>
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -34,9 +35,9 @@
             </ul>
         </div>
     </section>
-    <section class="nav-clear wrap">
+    <section class="wrap nav-clear">
 
-        <h2>Come on by</h2>
+        <h1>Come on by</h1>
         <div class="location-card">
             <div>
                 <h3>632 North Jones St.</h3>
@@ -49,25 +50,22 @@
                 <span>Saturday: 7:00am - 4:00pm</span><br>
                 <span>Sunday: Closed</span>
             </div>
-            <div><img src="./assets/location-filler.png" alt="" class="location-map"></div>
+            <div id="map" class="location-map"></div>
 
         </div>
 
     </section>
 
 
-
-
-<section class="email-signup mobile">
-    <h3>Email sign up</h3>
-    <p>Sign up to stay in the loop</p>
-    <div class="email-signup-wrap">
-        <label for="email-signup"></label>
-        <input type="text" id="email-signup" name="email-signup">
-        <button role="submit" id="email-submit"><span id="btn-arrow black"></span></button>
-    </div>
-
-</section>
+    <section class="email-signup mobile">
+        <h3>Sign up for emails to stay in the loop</h3>
+        <div class="email-signup-wrap">
+            <label for="email-signup"></label>
+            <input type="text" id="email-signup" name="email-signup">
+            <button role="submit" id="email-submit"><span class="btn-arrow-mobile black"></span></button>
+        </div>
+    
+    </section>
 
 
 
@@ -87,17 +85,14 @@
             </ul>
         </div>
 
-        <section class="email-signup desktop nav-clear">
-            <h3>Sign up for updates and coupons</h3>
-            <div class="email-signup-wrap">
-                <label for="email-signup"></label>
-                <input type="text" id="email-signup" name="email-signup">
-                <button role="submit" id="email-submit-desktop"><span class="btn-arrow black"></span></button>
-            </div>
-    
-        </section>
+
     </footer>
 
 </body>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzMGm75FvbiMEOkQdst9aija-MBZx5nYE&callback=initMap&v=weekly"
+defer
+></script>
+<script src="./location-map.js"></script>
 <script src="./script.js"></script>
 </html>

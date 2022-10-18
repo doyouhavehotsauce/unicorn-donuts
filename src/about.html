@@ -10,7 +10,7 @@
 <body>
     <section>
         <div class="mobile-nav mobile">
-            <div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
 
@@ -23,7 +23,8 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div>
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -34,8 +35,10 @@
             </ul>
         </div>
     </section>
-    <section class="nav-clear wrap">
-        <h1>About</h1>
+    <figure id="founders-img">
+    </figure>
+    <section class="wrap">
+        <h1>Who We Are</h1>
 <p>What started as a venture by friends has turned into lorem ipsum dolor sit amet consectetur adipisicing elit. Porro doloribus facere quasi officia, cum quidem necessitatibus consequuntur a sequi soluta in placeat voluptates id ullam iure vero suscipit saepe iusto!
 In mollitia neque ab blanditiis incidunt autem iusto reprehenderit aliquam illo accusantium consequatur nesciunt, repellendus temporibus. Voluptate obcaecati eum eius omnis veritatis placeat, ex cupiditate est accusamus dolorum enim error.
 Repellendus, vitae sit ratione sunt expedita cum unde nesciunt earum, non suscipit atque? Sunt necessitatibus possimus minima itaque laboriosam obcaecati aspernatur id velit minus ratione mollitia, temporibus pariatur dolore assumenda.
@@ -61,14 +64,13 @@ Maxime magnam autem velit reiciendis quae quod, incidunt officiis sed maiores so
     </section>
 
     <section class="email-signup mobile">
-        <h3>Email sign up</h3>
-        <p>Sign up to stay in the loop</p>
+        <h3>Sign up for emails to stay in the loop</h3>
         <div class="email-signup-wrap">
             <label for="email-signup"></label>
             <input type="text" id="email-signup" name="email-signup">
-            <button role="submit" id="email-submit"><span id="btn-arrow black"></span></button>
+            <button role="submit" id="email-submit"><span class="btn-arrow-mobile black"></span></button>
         </div>
-
+    
     </section>
 
     <footer>
