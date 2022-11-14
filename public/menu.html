@@ -9,12 +9,16 @@
 <link rel="stylesheet" href="css/style.css">
 <body>
     <section>
-        <div class="mobile-nav mobile">
-            <div>
+        <div class="mobile-nav">
+
+            <div id="branding-wrap-mobile">
+                <a href="./index.html" ><img class="mobile-logo" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
+            </div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
-
-            <ul id="nav-menu" class="hide-nav">
+            <ul id="mobile-nav-menu" class="hide-nav">
                 <a href="./index.html"><li>Home</li></a>
                 <a href="./about.html"><li>About</li></a>
                 <a href="./menu.html"><li>Menu</li></a>
@@ -23,7 +27,9 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div id="branding-wrap-desktop">
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -36,8 +42,8 @@
     </section>
 
     <section class="wrap nav-clear">
-        <h3>Our Menu</h3>
-        <p>we pride our selves on making things fresh as fuck. Put it in your mouth. You're gonna fucking love it.
+        <h1>Our Menu</h1>
+        <p>We pride our selves on making things fresh as fuck. Put it in your mouth. You're gonna fucking love it.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas ut veritatis saepe, autem, quasi sit temporibus at soluta fugit necessitatibus fugiat, deserunt nostrum ullam iusto a dolorem sunt quisquam?
             Fugit id iure dolore suscipit nihil reprehenderit eligendi, illum ratione, natus placeat cumque consectetur libero quas quae inventore velit minus rem sit a eum? Repudiandae saepe itaque consequatur inventore minus?
             Quidem dolorum totam cum, similique accusantium culpa quibusdam quas, veniam temporibus dicta iste, corrupti laudantium voluptate quasi tempore officiis libero excepturi necessitatibus animi delectus qui saepe illo. Nulla, vitae ut?
@@ -175,8 +181,8 @@
         <h3>Sign up for emails to stay in the loop</h3>
         <div class="email-signup-wrap">
             <label for="email-signup"></label>
-            <input type="text" id="email-signup" name="email-signup">
-            <button role="submit" id="email-submit"><span class="btn-arrow-mobile black"></span></button>
+            <input type="email" id="email-signup" name="email-signup" required>
+            <button role="submit" id="email-submit-mobile"><span class="btn-arrow-mobile black"></span></button>
         </div>
     
     </section>
@@ -202,7 +208,7 @@
             <h3>Sign up for updates and coupons</h3>
             <div class="email-signup-wrap">
                 <label for="email-signup"></label>
-                <input type="text" id="email-signup" name="email-signup">
+                <input type="email" id="email-signup" name="email-signup" required>
                 <button role="submit" id="email-submit-desktop"><span class="btn-arrow black"></span></button>
             </div>
     

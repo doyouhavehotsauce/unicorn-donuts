@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    
+
     const hamburgerToggle = document.getElementById('hamburger-toggle')
     let loadCount = 0
     hamburgerToggle.addEventListener('click', () => {
@@ -11,12 +11,15 @@ document.addEventListener("DOMContentLoaded", function(){
                 getNav.classList.remove('show-nav')
                 getNav.classList.add('hide-nav')
                 hamburger.classList.remove('showX')
+                console.log('hello')
 
             } else {
                 getNav.classList.remove('hide-nav')
                 getNav.classList.add('show-nav')
 
                 hamburger.classList.add('showX')
+
+                console.log('hello')
 
             }
     })

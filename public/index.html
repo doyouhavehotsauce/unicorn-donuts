@@ -11,12 +11,16 @@
 <link rel="stylesheet" href="css/style.css">
 <body>
     <section>
-        <div class="mobile-nav mobile">
-            <div>
+        <div class="mobile-nav">
+
+            <div id="branding-wrap-mobile">
+                <a href="./index.html" ><img class="mobile-logo" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
+            </div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
-
-            <ul id="nav-menu" class="hide-nav">
+            <ul id="mobile-nav-menu" class="hide-nav">
                 <a href="./index.html"><li>Home</li></a>
                 <a href="./about.html"><li>About</li></a>
                 <a href="./menu.html"><li>Menu</li></a>
@@ -25,7 +29,9 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div id="branding-wrap-desktop">
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -35,14 +41,18 @@
                 <a href="./contact.html"><li>Contact</li></a>
             </ul>
         </div>
-        <div class="hero nav-clear">
-            <div class="carousel-control">
-                <span><</span>
-                <span>></span>             
+        <div class="hero">
+            <div class="hero-parallax">
+                <h1 id="parallax-title">Unicorn Donuts</h1>     
+                <div><img class="donut-img" id="donut-1" src="./assets/striped1.png" alt="" data-parallax-donut-1></div>
+                <div><img class="donut-img" id="donut-2" src="./assets/striped2.png" alt="" data-parallax-donut-2></div>
+                <div><img class="donut-img" id="donut-3" src="./assets/striped3.png" alt="" data-parallax-donut-3></div>
+                <div><img class="donut-img" id="donut-4" src="./assets/striped2.png" alt="" data-parallax-donut-4></div>
+                <div><img class="donut-img" id="donut-5" src="./assets/striped3.png" alt="" data-parallax-donut-5></div>
             </div>
         </div>
     </section>
-    <section class="wrap">
+    <section class="wrap nav-clear">
 
         <h3>Bienvenidos!</h3>
         <p>
@@ -139,18 +149,15 @@
             laborum? Architecto.
         </p>
     </section>
-
     <section class="email-signup mobile">
-        <h3>Email sign up</h3>
-        <p>Sign up to stay in the loop</p>
+        <h3>Sign up for emails to stay in the loop</h3>
         <div class="email-signup-wrap">
             <label for="email-signup"></label>
             <input type="text" id="email-signup" name="email-signup">
-            <button role="submit" id="email-submit"><span id="btn-arrow black"></span></button>
+            <button role="submit" id="email-submit-mobile"><span class="btn-arrow-mobile black"></span></button>
         </div>
-
+    
     </section>
-
 
 
 
@@ -182,6 +189,6 @@
     
 
 </body>
-<script type="text/javascript" src="script.js"></script>
-
+<script type="text/javascript" src="./js/script.js"></script>
+<script type="text/javascript" src="./js/hero-parallax.js"></script>
 </html>

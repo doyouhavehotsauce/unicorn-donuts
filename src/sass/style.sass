@@ -13,16 +13,18 @@
 /// END TABLE OF CONTENTS **/
 
 // 1 Vars
+$large-mobile: 401px
+$small-tablet: 675px
 $tablet: 764px
 $desktop: 1024px
 $assetPath :"./assets/"
 $light-grey: #F2F0EF
-$pink: #F2AECE
+$pink: #ff74b5
 $maroon: #733244
 $light-blue: #91BDD9
 $black: #333
 $white: #fff
-$btn-transition: all 0.25s ease-in
+$btn-transition: all 0.2s ease-in
 
 
 // 2 Global Styles
@@ -54,8 +56,8 @@ table,
 td
     font-family: 'Open Sans', sans-serif
 p:first-letter
-    color: $pink
     font-size: 2.25rem
+    font-weight: bold
 section
     display: flex
     flex-direction: column
@@ -66,36 +68,81 @@ section
         display: block
 li
     list-style: none
-    padding: 1rem 0
+    padding: 1rem
 
 
 // 3 Nav
+#branding-wrap-desktop
+    display: flex
+    flex-direction: row
+    align-items: center
+    a
+        text-decoration: none
+        span
+            font-family:  'Pacifico', cursive
+            font-size: 2.2em
+            color: $pink
+
 .nav-clear
     margin-top: 5rem
 .wrap
     width: 90vw
-    margin: 5rem auto 0 auto
+    margin: 0
+@media ( min-width: $small-tablet )
+    .wrap
+        margin: 5rem auto 0 auto
+
+
+    h1
+        margin-top: 5rem
+@media (min-width: $tablet)
+    .wrap
+        h1
+            margin-top: 3rem
 
 @media ( min-width: $desktop)
     .wrap
         width: 60vw
         margin: 0 auto
     .nav-clear
-        margin: 89px auto 4rem auto
+        margin: 90px auto 4rem auto
     
 // 3.1 Mobile Nav
 .mobile-nav
+    display: grid
+    grid-template-columns: 1fr 75px
+    padding-left: 75px
     width: 100%
     text-align: center
     box-shadow: 0 0 0.5rem #00000026
     position: fixed
     background: white
     z-index: 2
-    > div
+    #hamburger-toggle
         padding: 0.5rem
         text-align: right
         min-height: 2.75rem
         margin-top: 0.75rem
+    .mobile-logo
+        height: 75px
+        width: 75px
+        margin-right: 15px
+#branding-wrap-mobile
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 0.5rem 0
+    @media ( min-width: $large-mobile )
+        flex-direction: row
+        
+    a + a
+        text-decoration: none
+        span
+            font-family: 'Pacifico', cursive
+            color: $pink
+            font-size: 1.5rem
+
 .showX#hamburger
     border: none
 .showX#hamburger::before,
@@ -154,8 +201,11 @@ li
     right: -2px
     top: -12px
     border-radius: 4px
-#nav-menu a li
+#mobile-nav-menu a li
     background: lighten($light-grey, 20%)
+    &:hover,
+    &:active
+        color: $pink
 #hamburger + ul a
     display: block
     background: $light-blue
@@ -211,17 +261,31 @@ li
 
 
 
-
 // 4 Parallax
 #founders-img
     background-image: url('../assets/founders-image.png')
-    background-attachment: fixed
+    background-attachment: initial
     background-position: center
     background-repeat: no-repeat
     background-size: cover
-    min-height: 650px
+    min-height: 500px
     padding-top: 10rem
+@media ( min-width: $small-tablet )
+    #founders-img
+        background-attachment: fixed
+.parallax
+    box-shadow: 0 0 0.5rem #00000026
+    background: $white
+    margin-top: -120px
 
+@media ( min-width: $small-tablet )
+    .parallax
+        background: $white
+        margin-top: 0
+
+        
+#parallax-hero-h1
+    margin-top: 1rem
 
 .donut-img
     height: 200px
@@ -232,13 +296,60 @@ li
     width: 100vw
     height:100vh
     padding-top: 10rem
-    margin-top: 7rem
+    margin-top: 6rem
+    overflow: hidden
     
 .hero-parallax
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
+    position: relative
+#parallax-title
+    font-size: min(5rem, calc(16vw - 12px))
+#donut-1,
+#donut-2,
+#donut-3,
+#donut-4,
+#donut-5
+    position: absolute
+#donut-1
+    left: -2rem
+    top: -13rem
+    transform: translate(0px, 0%) scale(0.9)
+#donut-2
+    bottom: -16rem
+    right: -3rem
+    transform: translate(0px, 0%) scale(0.75)
+#donut-3
+    bottom: -21rem
+    left: 6rem
+    transform: translate(0px, 0%) scale(0.75)
+#donut-4
+    top: 21rem
+    left: 2rem
+    transform: translate(0px, 0%)
+#donut-5
+    display: none
+@media (min-width: $desktop)
+    #donut-1
+        top: -7rem
+        left: 0
+        transform: scale(1.5)
+    #donut-2
+        bottom: -25rem
+        right: 40rem
+        transform: scale(1.25)
+        rotate: 45deg
+    #donut-3
+        bottom: -14rem
+        left: 33rem
+        transform: scale(1.15)
+    #donut-4
+        bottom: 6rem
+        right: 15rem
+        transform: scale(2)
+        rotate: -100deg
+    #donut-5
+        bottom: -17rem
+        right: 7rem
+        transform: scale(1.5)
 
 .mobile-carousel
   display: flex
@@ -273,24 +384,32 @@ li
         font-size: 1.5rem
         padding: 1rem
         transition: $btn-transition
-
-        &:hover,
-        &:active
-            border-color: $pink
+        &.active-menu
+            color: $pink
+            border-bottom: 3px solid $pink
+            &:hover
+                border-bottom: 3px solid $pink
+        &:hover
+            color: $pink
+            border-bottom: 3px solid transparent
     li:nth-child(2)
         margin: 0 2rem
 #juice-tbl
     img
-        animation: juiceCup 1s ease forwards
+        animation: juiceCup 0.5s ease forwards
+
 #coffee-tbl
     img
-        animation: coffeeSlideIn 1s ease forwards
+        animation: coffeeSlideIn 0.75s ease forwards
 #donuts-tbl
     img
-        animation: donutRoll 1s ease forwards
+        animation: donutRoll 0.75s ease forwards
 #coffee-tbl,
 #juice-tbl,
 #donuts-tbl
+    h2
+        font-family: 'Pacifico', cursive
+        color: $pink
     div
         display: flex
         align-items: center
@@ -311,16 +430,11 @@ li
         margin: 1rem auto 3rem auto
 @keyframes juiceCup
     0%
-        transform: rotate(-12deg)
-        left: -25px
+        left: -35px
         opacity: 0
-    30%
+    70%
         opacity: 1
-        transform: rotate(-6deg)
-    75%
-        transform: rotate(0)
     100%
-        transform: rotate(0)
         left: 0
 @keyframes donutRoll
     0%
@@ -364,9 +478,7 @@ li
     display: none
 .show-menu
     display: block
-.active-menu
-    color: $pink
-    border-bottom: 3px solid darken($pink, 50%)
+
 
 
 th
@@ -378,8 +490,15 @@ th
 td
    line-height: 1.75
    padding: 0.5rem
-td:nth-of-type(2)
-    text-align: right
+   display: block
+// td:nth-of-type(2)
+//     text-align: left
+@media (min-width: $tablet)
+    td
+        display: table-cell
+    td:nth-of-type(2)
+        text-align: right 
+
 .m-1
     margin-top: 1.5rem
 .vwidth
@@ -388,12 +507,13 @@ td:nth-of-type(2)
 
 // 6 Location Card
 #map
-    height: 400px
-    width: 400px
+    height: 300px
+    width: 600px
     z-index: -1
 .location-card
     display: flex
     justify-content: space-evenly
+    flex-direction: column-reverse
 .location-map
     margin-right: 1rem
     width: 400px
@@ -500,18 +620,20 @@ footer ul a
                     
                     li
                         padding: .5rem 0
-    .mobile
+    .mobile,
+    .mobile-nav
         display: none
     .desktop
         display: block
         text-align: left
     #desktop-nav
         display: grid
-        grid-template-columns: 10rem 1fr
+        grid-template-columns: 350px 1fr
         position: fixed
         width: 100vw
         background: #fff
         box-shadow: 0 0 0.5rem #00000026
+        z-index: 1
         .desktop-logo
             margin: 0.5rem 0.5rem 0.5rem 1rem
             width: 90px
@@ -521,6 +643,15 @@ footer ul a
             align-items: center
             justify-content: space-evenly
             width: 100%
+            li
+                border-bottom: 3px solid $white
+                color: $black
+                transition: all 0.25s ease
+            li:hover,
+            li:active
+                border-bottom: 3px solid $pink
+            li:active
+                color: $pink
     footer
         background: $black
         color: $white
@@ -586,15 +717,17 @@ footer ul a
     grid-column-end: 4
     width: 15rem
     text-align: left
-#email-submit
+#email-submit-mobile
     background: $white
     color: $black
     cursor: pointer
+    border: 1px solid $black
+    padding: 1rem
 #email-submit-desktop
     cursor: pointer
     padding: 1rem 0.25rem
-    &:hover .btn-arrow
-        width: 35px
+    // &:hover .btn-arrow
+    //     width: 35px
 
 .btn-arrow
     display: block
@@ -624,10 +757,12 @@ footer ul a
         top: -5px
 .btn-arrow-mobile
     @extend .btn-arrow
+    background: $white
     width: 20px
     &::before,
     &::after
         width: 10px
+        background: $white
     &::before
         top: -3px
     &::after

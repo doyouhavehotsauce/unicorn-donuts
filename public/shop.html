@@ -10,7 +10,7 @@
 <body>
     <section>
         <div class="mobile-nav mobile">
-            <div>
+            <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
 
@@ -23,7 +23,8 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div>
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo.png" alt="Unicorn Donuts Logo"></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -110,12 +111,11 @@
 
 
 <section class="email-signup mobile">
-    <h3>Email sign up</h3>
-    <p>Sign up to stay in the loop</p>
+    <h3>Sign up for emails to stay in the loop</h3>
     <div class="email-signup-wrap">
         <label for="email-signup"></label>
         <input type="text" id="email-signup" name="email-signup">
-        <button role="submit" id="email-submit"><span id="btn-arrow black"></span></button>
+        <button role="submit" id="email-submit"><span class="btn-arrow-mobile black"></span></button>
     </div>
 
 </section>

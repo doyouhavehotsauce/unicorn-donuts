@@ -9,12 +9,16 @@
 <link rel="stylesheet" href="css/style.css">
 <body>
     <section>
-        <div class="mobile-nav mobile">
+        <div class="mobile-nav">
+
+            <div id="branding-wrap-mobile">
+                <a href="./index.html" ><img class="mobile-logo" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
+            </div>
             <div id="hamburger-toggle">
                 <div id="hamburger"></div>
             </div>
-
-            <ul id="nav-menu" class="hide-nav">
+            <ul id="mobile-nav-menu" class="hide-nav">
                 <a href="./index.html"><li>Home</li></a>
                 <a href="./about.html"><li>About</li></a>
                 <a href="./menu.html"><li>Menu</li></a>
@@ -23,7 +27,9 @@
             </ul>
         </div>
         <div class="desktop" id="desktop-nav">
-            <div class="desktop-logo navScrollLoad">
+            <div id="branding-wrap-desktop">
+                <a href="./index.html" ><img class="desktop-logo navScrollLoad" src="./assets/donut-logo-finished.svg" alt="Unicorn Donuts Logo"></a>
+                <a href="./index.html" ><span>Unicorn Donuts</span></a>
             </div>
             <ul class="desktop-links">
                 <a href="./index.html"><li>Home</li></a>
@@ -42,15 +48,21 @@
     </div>
 
 <div class="email-signup-wrap" id="email-form">
-    <form action="POST" class="email-signup">
+    <form class="email-signup" action="https://formsubmit.co/307b3f893d856da9a060bcedd2d3a628" method="POST">
         <label for="name">Name</label>
-        <input type="text" id="name" required>
+        <input type="text" name="name" id="name" required>
         
         <label for="email">Email</label>
-        <input type="email" id="email" required>
+        <input type="email" name="email" id="email" required>
         
         <label for="message">Message</label>
         <textarea name="message" id="message" rows="10"  required ></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <!-- <input type="text" name="_honey" style="display:none"> -->
+        <input type="hidden" name="_next" value="http://localhost:3000/form-success.html">
+
+
+
 
         <button type="submit" class="email-submit" id="submit-form">Submit</button>
     </form>
@@ -88,7 +100,7 @@
 
     </section>
 </footer>
-    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./script.js"></script>
     <script src="./contact-form.js"></script>
 
